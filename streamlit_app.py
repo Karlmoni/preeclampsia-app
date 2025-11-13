@@ -5,6 +5,7 @@ import pandas as pd
 import streamlit as st
 import joblib
 
+np.random.bit_generator = np.random._bit_generator
 # -------------------------------
 # 1. Cargar artefactos
 # -------------------------------
@@ -87,4 +88,5 @@ if st.button("🔍 Predecir riesgo"):
     if res["pred_label"] == "RIESGO":
         st.error("⚠ La paciente presenta riesgo elevado de preeclampsia.")
     else:
+
         st.success("✔ La paciente no presenta riesgo significativo según el modelo.")
